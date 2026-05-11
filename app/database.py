@@ -1,10 +1,13 @@
 from datetime import datetime
 from typing import List, Optional
 from sqlalchemy import Column, Integer
-
 from sqlmodel import Field, Relationship, SQLModel, create_engine
+import os 
+from dotenv import load_dotenv
 
-DATABASE_URL = "postgresql://postgres:admin@localhost:5432/locationVoiture"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL, echo=True)
 
 class Locataire(SQLModel, table=True):

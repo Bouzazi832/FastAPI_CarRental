@@ -1,0 +1,16 @@
+# Python junk
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Environment secrets
+.env
+
+# Docker
+.dockerignore
+
+# Operating System files
+.DS_Store
+Thumbs.db

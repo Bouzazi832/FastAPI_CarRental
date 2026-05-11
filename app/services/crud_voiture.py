@@ -26,15 +26,15 @@ def getCarByBrand(brand:str,session: Session):
     return session.exec(stmt).all()
 
 def total_number_cars(session: Session):
-    stmt=select([func.count(Voiture.num_imma)])
+    stmt=select(func.count(Voiture.num_imma))
     return session.exec(stmt).first()
 
 def total_renting_cars(session: Session):
-    stmt=select([func.count(Voiture.num_imma)]).where(Voiture.etat == 1)
+    stmt=select(func.count(Voiture.num_imma)).where(Voiture.etat == 1)
     return session.exec(stmt).first()
 
 def average_kilo_cars(session: Session):
-    stmt=select([func.avg(Voiture.kilometrage)])
+    stmt=select(func.avg(Voiture.kilometrage))
     return session.exec(stmt).first()
 
 def create_car(voiture:Voiture,session: Session):
